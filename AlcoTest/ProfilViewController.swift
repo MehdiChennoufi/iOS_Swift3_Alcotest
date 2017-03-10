@@ -47,7 +47,7 @@ class ProfilViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         self.user.persistData()
         
-        print("L'user est de type : \(self.user.gender) et pèse \(self.user.weight) ")
+        //print("L'user est de type : \(self.user.gender) et pèse \(self.user.weight) ")
     }
     
     //MARK: - FONCTIONS DU PICKER VIEW

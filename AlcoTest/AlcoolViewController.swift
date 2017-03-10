@@ -40,7 +40,7 @@ class AlcoolViewController: UIViewController {
     var user = User()
     var drinks = [Drink]()
     
-    //MARK: === FONCTIONS LIEES A LA VUE ===
+    //MARK: - FONCTIONS LIEES A LA VUE
     
     // Au chargement de l'app
     override func viewDidLoad() {
@@ -55,6 +55,19 @@ class AlcoolViewController: UIViewController {
         // Initialisation des variables à 0 au lancement du programme
         tauxLabel.text = "0,0"
         progressBar.setProgress(0.0, animated: true)
+        
+        // Modification de la forme des boutons
+        self.beerButton.layer.cornerRadius = self.beerButton.frame.size.width / 2
+        self.beerButton.clipsToBounds = true
+        
+        self.vineButton.layer.cornerRadius = self.beerButton.frame.size.width / 2
+        self.vineButton.clipsToBounds = true
+        
+        self.whiskyButton.layer.cornerRadius = self.beerButton.frame.size.width / 2
+        self.whiskyButton.clipsToBounds = true
+        
+        self.portoButton.layer.cornerRadius = self.beerButton.frame.size.width / 2
+        self.portoButton.clipsToBounds = true
         
         super.viewDidLoad()
 
@@ -83,7 +96,7 @@ class AlcoolViewController: UIViewController {
     }
 
     
-    //MARK: === FONCTIONS POUR LA PICKER VIEW ===
+    //MARK: - FONCTIONS POUR LA PICKER VIEW
     
     // Le nombre de "component" à afficher ("date", "heures", "minutes" par exemple)
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -130,7 +143,6 @@ class AlcoolViewController: UIViewController {
         whiskyLabel.text = "\(user.nbOfGlasses[2])"
         portoLabel.text = "\(user.nbOfGlasses[3])"
         
-        
         let rate = user.computeAlcooholRate(drinks: self.drinks)
         
         progressBar.tintColor = UIColor.blue
@@ -167,7 +179,6 @@ class AlcoolViewController: UIViewController {
         }
         updateDisplay()
     }
-    
     
     
 }
